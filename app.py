@@ -25,43 +25,43 @@ st.write("""
 @st.cache_resource
 def load_models():
     # YOLOv8 모델 로드
-    yolo_model = YOLO('str_proj/4_cosmetics/model/best.pt')
+    yolo_model = YOLO('model/best.pt')
     # 각 facepart별 딥러닝 모델 로드
     skin_models = {
-        0: {'sensitive': load_model('str_proj/4_cosmetics/model/0/sensitive.h5')},
+        0: {'sensitive': load_model('model/0/sensitive.h5')},
         1: {
             'forehead_moisture': load_model(
-                'str_proj/4_cosmetics/model/1/forehead_moisture_regression.h5'),
+                'model/1/forehead_moisture_regression.h5'),
             'forehead_elasticity_R2': load_model(
-                'str_proj/4_cosmetics/model/1/forehead_elasticity_R2_regression.h5'),
+                'model/1/forehead_elasticity_R2_regression.h5'),
             'forehead_wrinkle': load_model(
-                'str_proj/4_cosmetics/model/1/forehead_wrinkle.h5')
+                'model/1/forehead_wrinkle.h5')
         },
         2: {'glabellus_wrinkle': load_model(
-            'str_proj/4_cosmetics/model/2/glabellus_wrinkle.h5')},
+            'model/2/glabellus_wrinkle.h5')},
         3: {'l_perocular_wrinkle': load_model(
-            'str_proj/4_cosmetics/model/3/l_perocular_wrinkle.h5')},
+            'model/3/l_perocular_wrinkle.h5')},
         4: {'r_perocular_wrinkle': load_model(
-            'str_proj/4_cosmetics/model/4/r_perocular_wrinkle.h5')},
+            'model/4/r_perocular_wrinkle.h5')},
         5: {
             'l_cheek_moisture': load_model(
-                'str_proj/4_cosmetics/model/5/l_cheek_moisture_regression.h5'),
+                'model/5/l_cheek_moisture_regression.h5'),
             'l_cheek_elasticity_R2': load_model(
-                'str_proj/4_cosmetics/model/5/l_cheek_elasticity_R2_regression.h5'),
-            'l_cheek_pore': load_model('str_proj/4_cosmetics/model/5/l_cheek_pore_regression.h5')
+                'model/5/l_cheek_elasticity_R2_regression.h5'),
+            'l_cheek_pore': load_model('model/5/l_cheek_pore_regression.h5')
         },
         6: {
             'r_cheek_moisture': load_model(
-                'str_proj/4_cosmetics/model/6/r_cheek_moisture_regression.h5'),
+                'model/6/r_cheek_moisture_regression.h5'),
             'r_cheek_elasticity_R2': load_model(
-                'str_proj/4_cosmetics/model/6/r_cheek_elasticity_R2_regression.h5'),
-            'r_cheek_pore': load_model('str_proj/4_cosmetics/model/6/r_cheek_pore_regression.h5')
+                'model/6/r_cheek_elasticity_R2_regression.h5'),
+            'r_cheek_pore': load_model('model/6/r_cheek_pore_regression.h5')
         },
         8: {
             'chin_moisture_regression': load_model(
-                'str_proj/4_cosmetics/model/7/chin_moisture_regression.h5'),
+                'model/7/chin_moisture_regression.h5'),
             'chin_elasticity_R2_regression': load_model(
-                'str_proj/4_cosmetics/model/7/chin_elasticity_R2_regression.h5'),
+                'model/7/chin_elasticity_R2_regression.h5'),
         },
     }
     return yolo_model, skin_models
