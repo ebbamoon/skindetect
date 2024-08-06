@@ -1,4 +1,5 @@
-opencv-python==4.10.0.84
+numpy
+opencv-python-headless
 streamlit==1.36.0
 ultralytics==8.2.71
 tensorflow==2.15.0
