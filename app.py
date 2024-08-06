@@ -5,9 +5,10 @@ import os
 from PIL import Image
 import numpy as np
 import cv2
-# from keras.models import load_model
-from tensorflow.keras.models import load_model
+from keras.models import load_model
+# from tensorflow.keras.models import load_model
 from ultralytics import YOLO
+
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 product_df = pd.read_csv('data/product_info.csv')
