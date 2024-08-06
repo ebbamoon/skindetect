@@ -86,6 +86,11 @@ def predict_yolo(model, image, conf=0.25, iou=0.45, max_det=10):
 
 # 이미지 전처리 함수
 def preprocess_image(img):
+    img = np.array(img)
+    if not isinstance(img, np.ndarray):
+        raise ValueError("Input image should be a NumPy array.")
+    if img.ndim != 3 or img.shape[2] != 3:
+        raise ValueError("Input image must have 3 channels (RGB/BGR).")
     img = cv2.resize(img, (224, 224), interpolation=cv2.INTER_AREA)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = img.astype(np.float32) / 255.0
