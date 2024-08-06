@@ -1,8 +1,8 @@
-streamlit
+streamlit==1.26.4  # Specify the Streamlit version you are using
+opencv-python==4.10.0.84  # Make sure this is compatible with Python 3.11
 ultralytics==8.2.55
 tensorflow==2.15.0
 numpy==1.26.4
-opencv-python==4.10.0.84
 matplotlib==3.9.1
 pillow==10.4.0
 pandas==2.1.4
